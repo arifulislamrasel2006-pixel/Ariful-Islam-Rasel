@@ -1,0 +1,1835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ariful Islam Rasel | Junior NOC Executive</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables - New Professional Theme */
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #0ea5e9;
+            --accent-color: #f59e0b;
+            --success-color: #10b981;
+            --dark-color: #1f2937;
+            --light-color: #f8fafc;
+            --gray-color: #6b7280;
+            --card-bg: #ffffff;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --border-radius: 16px;
+            --gradient-primary: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
+            --gradient-secondary: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
+            --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+        }
+
+        .dark-mode {
+            --primary-color: #3b82f6;
+            --secondary-color: #0ea5e9;
+            --accent-color: #f59e0b;
+            --dark-color: #f8fafc;
+            --light-color: #0f172a;
+            --gray-color: #94a3b8;
+            --card-bg: #1e293b;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #0ea5e9 100%);
+        }
+
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+            transition: var(--transition);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 3.5rem;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background: var(--gradient-primary);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: var(--dark-color);
+        }
+
+        h4 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            color: var(--gray-color);
+            font-size: 1.05rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 35px;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .dark-mode .card {
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            font-size: 1.05rem;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: var(--gradient-secondary);
+            transition: all 0.5s;
+            z-index: -1;
+        }
+
+        .btn:hover:before {
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+        }
+
+        .dark-mode header {
+            background-color: rgba(15, 23, 42, 0.95);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: var(--transition);
+            position: relative;
+            padding: 8px 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+            bottom: 0;
+            left: 0;
+            transition: var(--transition);
+            border-radius: 3px;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .theme-toggle {
+            background: var(--gradient-primary);
+            border: none;
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--dark-color);
+        }
+
+        /* Hero Section with Animations */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), 
+                        url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 200px 0 140px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            color: white;
+            font-size: 4rem;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 35px;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 300;
+        }
+
+        .hero-tagline {
+            font-size: 1.3rem;
+            margin-bottom: 50px;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .profile-image {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 50px;
+            border: 6px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Animated Download CV Button */
+        .download-cv-btn {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 20px 45px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            animation: pulse 2.5s infinite;
+            margin-top: 40px;
+        }
+
+        .download-cv-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.6s;
+        }
+
+        .download-cv-btn:hover:before {
+            left: 100%;
+        }
+
+        .download-cv-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.5);
+            animation: none;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(37, 99, 235, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Profile Section */
+        .profile-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .profile-text h2 {
+            text-align: left;
+        }
+
+        .profile-text h2:after {
+            left: 0;
+            transform: none;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 45px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 25px 20px;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+
+        .stat-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: var(--border-radius);
+            padding: 2px;
+            background: var(--gradient-primary);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--gray-color);
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            font-weight: 600;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skills-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.03;
+            z-index: -1;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 35px;
+        }
+
+        .skill-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .skill-icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            color: white;
+            font-size: 2.2rem;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+            transition: var(--transition);
+        }
+
+        .skill-card:hover .skill-icon {
+            transform: scale(1.1) rotate(10deg);
+            background: var(--gradient-secondary);
+        }
+
+        .skill-image {
+            width: 100%;
+            height: 180px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .skill-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .skill-card:hover .skill-image img {
+            transform: scale(1.1);
+        }
+
+        .skill-progress {
+            width: 100%;
+            height: 10px;
+            background-color: rgba(0, 0, 0, 0.08);
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .dark-mode .skill-progress {
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            width: 0;
+            transition: width 2s cubic-bezier(0.1, 0.5, 0.1, 1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .progress-bar:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.4), 
+                transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .experience-timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gradient-primary);
+            transform: translateX(-50%);
+        }
+
+        .experience-item {
+            position: relative;
+            margin-bottom: 60px;
+            width: 45%;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .experience-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .experience-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .experience-item:nth-child(even) {
+            left: 55%;
+        }
+
+        .experience-dot {
+            position: absolute;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            border: 5px solid var(--light-color);
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .experience-item:nth-child(odd) .experience-dot {
+            right: -52px;
+        }
+
+        .experience-item:nth-child(even) .experience-dot {
+            left: -52px;
+        }
+
+        .experience-date {
+            font-size: 0.95rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .experience-content ul {
+            margin-top: 20px;
+        }
+
+        .experience-content li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .experience-content li:before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Education Section */
+        .education-certs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 45px;
+        }
+
+        .education-card, .cert-card {
+            text-align: center;
+        }
+
+        .cert-badge {
+            width: 120px;
+            height: 120px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: white;
+            font-size: 3rem;
+            box-shadow: 0 15px 35px rgba(245, 158, 11, 0.3);
+            animation: float 6s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+
+        .cert-details {
+            background: rgba(245, 158, 11, 0.1);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-top: 25px;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0.03;
+            z-index: -1;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 70px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            padding: 25px;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+
+        .contact-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: var(--border-radius);
+            padding: 2px;
+            background: var(--gradient-primary);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover:before {
+            opacity: 1;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: var(--dark-color);
+            font-size: 1.05rem;
+        }
+
+        .form-control {
+            padding: 18px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            transition: var(--transition);
+            background-color: var(--card-bg);
+            color: var(--dark-color);
+        }
+
+        .dark-mode .form-control {
+            border-color: #334155;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark-color) 0%, #0f172a 100%);
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+        }
+
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 25px;
+        }
+
+        .footer-links h3, .footer-contact h3 {
+            color: white;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-links h3:after, .footer-contact h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gradient-primary);
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-links a {
+            transition: var(--transition);
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.05rem;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .footer-links a:before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            transition: var(--transition);
+            opacity: 0;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 35px;
+        }
+
+        .footer-links a:hover:before {
+            opacity: 1;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 18px;
+            margin-top: 30px;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            font-size: 1.3rem;
+            color: white;
+        }
+
+        .social-icon:hover {
+            background: var(--gradient-primary);
+            transform: translateY(-5px) rotate(10deg);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: 3.2rem;
+            }
+            
+            h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .profile-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .education-certs {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+            
+            .experience-timeline:before {
+                left: 30px;
+            }
+            
+            .experience-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 80px;
+            }
+            
+            .experience-item:nth-child(odd) .experience-dot,
+            .experience-item:nth-child(even) .experience-dot {
+                left: 24px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--card-bg);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 60px;
+                transition: var(--transition);
+                gap: 30px;
+                z-index: 999;
+            }
+            
+            .dark-mode .nav-links {
+                background-color: rgba(30, 41, 59, 0.98);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero {
+                padding: 180px 0 100px;
+                background-attachment: scroll;
+                min-height: auto;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .hero-tagline {
+                font-size: 1.15rem;
+            }
+            
+            .profile-image {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .profile-image {
+                width: 160px;
+                height: 160px;
+            }
+            
+            .download-cv-btn {
+                padding: 18px 35px;
+                font-size: 1.1rem;
+            }
+            
+            .card {
+                padding: 25px;
+            }
+            
+            .education-certs {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Particles Background */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <i class="fas fa-network-wired"></i>
+                <span>Ariful Islam Rasel</span>
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div id="particles-js"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="profile-image">
+                    <img src="https://i.ibb.co.com/ZRx2Jfdq/CV-Picture.png" alt="Ariful Islam Rasel - Junior NOC Executive">
+                </div>
+                <h1>Ariful Islam Rasel</h1>
+                <p class="hero-subtitle">Junior NOC Executive | Network Professional</p>
+                <p class="hero-tagline">Specializing in ISP Operations & Network Infrastructure Management with 2+ years of hands-on experience</p>
+                
+                <a href="https://drive.google.com/file/d/1wNYupWlk5bOi4EYZ_lmf7JotG9BlK8be/view?usp=sharing" 
+                   target="_blank" 
+                   class="download-cv-btn">
+                    <i class="fas fa-download"></i> Download CV
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section class="section" id="profile">
+        <div class="container">
+            <div class="profile-content fade-in">
+                <div class="profile-text">
+                    <h2>Professional Profile</h2>
+                    <p>Dedicated network professional with over 2 years of hands-on experience in ISP operations. Currently serving as a Junior NOC Executive for 4 months, previously worked 1 year as a Technical Support Engineer and several months as a Technician. Skilled in network troubleshooting, internet service management, and client support.</p>
+                    <p>Currently pursuing SSC and holding a MikroTik MTCNA certification, demonstrating a strong commitment to network infrastructure management and service excellence.</p>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-number">2+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Positions Held</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1</div>
+                            <div class="stat-label">Certification</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-image-large fade-in">
+                    <div class="card" style="padding: 0; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Network Operations Center" 
+                             style="width: 100%; height: 400px; object-fit: cover;">
+                        <div style="padding: 25px;">
+                            <h4>NOC Operations Specialist</h4>
+                            <p>Expert in monitoring and maintaining network infrastructure for optimal performance and 99.9% uptime.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills-section" id="skills">
+        <div class="container">
+            <h2 class="fade-in">Technical Skills</h2>
+            <div class="skills-grid">
+                <!-- Skill 1: Network Troubleshooting -->
+                <div class="card skill-card fade-in">
+                    <div class="skill-image">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Network Troubleshooting">
+                    </div>
+                    <div class="skill-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Network Troubleshooting</h3>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-width="92%"></div>
+                    </div>
+                    <p>Expert in diagnosing and resolving network issues efficiently. Proficient in identifying network bottlenecks and implementing solutions.</p>
+                </div>
+
+                <!-- Skill 2: Router Configuration -->
+               <div class="card skill-card fade-in">
+    <div class="skill-image">
+        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Networking">
+    </div>
+    <div class="skill-icon">
+        <i class="fas fa-wifi"></i>
+    </div>
+    <h3>Router Configuration</h3>
+    <div class="skill-progress">
+        <div class="progress-bar" data-width="88%"></div>
+    </div>
+    <p>Proficient in configuring routers for optimal network performance. Experience with Cisco, MikroTik, and TP-Link routers.</p>
+</div>
+                <!-- Skill 3: Internet Service Installation -->
+                <div class="card skill-card fade-in">
+                    <div class="skill-image">
+                        <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Internet Service Installation">
+                    </div>
+                    <div class="skill-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3>Internet Service Installation</h3>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-width="90%"></div>
+                    </div>
+                    <p>Skilled in installing and setting up internet services for residential and commercial clients. Experienced in fiber and wireless installations.</p>
+                </div>
+
+                <!-- Skill 4: Technical Support -->
+                <div class="card skill-card fade-in">
+                    <div class="skill-image">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Technical Support">
+                    </div>
+                    <div class="skill-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Technical Support</h3>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-width="94%"></div>
+                    </div>
+                    <p>Providing exceptional technical support to clients via phone, email, and in-person. Excellent communication and problem-solving skills.</p>
+                </div>
+
+                <!-- Skill 5: Network Monitoring -->
+                <div class="card skill-card fade-in">
+                    <div class="skill-image">
+                        <img src="https://images.unsplash.com/photo-1623479322729-28b25c16b011?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Network Monitoring">
+                    </div>
+                    <div class="skill-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>Network Monitoring</h3>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-width="89%"></div>
+                    </div>
+                    <p>Monitoring network operations and ensuring service reliability. Experienced with various monitoring tools and real-time alert systems.</p>
+                </div>
+
+                <!-- Skill 6: MikroTik RouterOS -->
+                <div class="card skill-card fade-in">
+                    <div class="skill-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="MikroTik RouterOS">
+                    </div>
+                    <div class="skill-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>MikroTik RouterOS</h3>
+                    <div class="skill-progress">
+                        <div class="progress-bar" data-width="87%"></div>
+                    </div>
+                    <p>Certified in MikroTik RouterOS configuration and management. Proficient in firewall rules, routing, and wireless configurations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+        <div class="container">
+            <h2 class="fade-in">Work Experience</h2>
+            <div class="experience-timeline">
+                <!-- Current Role -->
+                <div class="experience-item fade-in">
+                    <div class="experience-dot"></div>
+                    <div class="card experience-content">
+                        <div class="experience-date">
+                            <i class="far fa-calendar-alt"></i> 4 months (Current)
+                        </div>
+                        <h3>Junior NOC Executive</h3>
+                        <h4>PlusNet Communication</h4>
+                        <ul>
+                            <li>Install and maintain internet services for residential and commercial clients</li>
+                            <li>Troubleshoot network issues and provide timely resolution</li>
+                            <li>Configure routers and network devices to optimize performance</li>
+                            <li>Deliver technical support to clients via multiple channels</li>
+                            <li>Monitor network operations and ensure service reliability</li>
+                            <li>Collaborate with technical teams to resolve escalated network problems</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Previous Role 1 -->
+                <div class="experience-item fade-in">
+                    <div class="experience-dot"></div>
+                    <div class="card experience-content">
+                        <div class="experience-date">
+                            <i class="far fa-calendar-alt"></i> 1 year
+                        </div>
+                        <h3>Technical Support Engineer</h3>
+                        <h4>PlusNet Communication</h4>
+                        <ul>
+                            <li>Provided technical support for internet services and network issues</li>
+                            <li>Assisted in configuring routers and network devices</li>
+                            <li>Resolved client connectivity problems efficiently</li>
+                            <li>Maintained customer satisfaction through excellent service</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Previous Role 2 -->
+                <div class="experience-item fade-in">
+                    <div class="experience-dot"></div>
+                    <div class="card experience-content">
+                        <div class="experience-date">
+                            <i class="far fa-calendar-alt"></i> Several months
+                        </div>
+                        <h3>Technician</h3>
+                        <h4>PlusNet Communication</h4>
+                        <ul>
+                            <li>Assisted in installation and maintenance of internet services</li>
+                            <li>Supported network setup and troubleshooting tasks</li>
+                            <li>Learned practical networking skills on the job</li>
+                            <li>Provided field support for network infrastructure</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section" id="education">
+        <div class="container">
+            <h2 class="fade-in">Education & Certifications</h2>
+            <div class="education-certs">
+                <div class="card education-card fade-in">
+                    <div class="cert-badge">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education</h3>
+                    <h4>SSC Candidate</h4>
+                    <p><strong>Cumilla Ideal Model School and College</strong></p>
+                    <p>Expected Completion: 2024</p>
+                    <div style="margin-top: 20px; padding: 20px; background: rgba(37, 99, 235, 0.1); border-radius: 12px;">
+                        <p><strong>Currently pursuing:</strong> Secondary School Certificate (SSC)</p>
+                        <p><strong>Focus:</strong> Science & Technology with emphasis on Computer Studies</p>
+                    </div>
+                </div>
+
+                <div class="card cert-card fade-in">
+                    <div class="cert-badge">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Certifications</h3>
+                    <h4>MikroTik Certified Network Associate (MTCNA)</h4>
+                    <div class="cert-details">
+                        <p><strong>Certification ID:</strong> MTCNA-51358</p>
+                        <p><strong>Date Obtained:</strong> March 19, 2025</p>
+                        <p><strong>Valid Through:</strong> July 2, 2025</p>
+                    </div>
+                    <p style="margin-top: 20px; font-size: 1.05rem;">
+                        Demonstrates proficiency in MikroTik RouterOS configuration, routing, wireless, firewall, and network infrastructure management.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <h2 class="fade-in">Contact Me</h2>
+            <div class="contact-container">
+                <div class="contact-info fade-in">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p style="font-size: 1.1rem;">arifulislamrasel2006@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p style="font-size: 1.1rem;">+880 1931 431018</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Location</h3>
+                            <p style="font-size: 1.1rem;">Cumilla Cantonment, Bangladesh</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Availability</h3>
+                            <p style="font-size: 1.1rem;">Open for networking opportunities and collaborations</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form fade-in">
+                    <form id="contactForm" action="https://formsubmit.co/arifulislamrasel2006@gmail.com" method="POST">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html">
+                        <input type="hidden" name="_template" value="table">
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required placeholder="Enter your full name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" required placeholder="Enter your email address">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required placeholder="Enter message subject">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control" required placeholder="Enter your message here..." rows="6"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Ariful Islam Rasel</div>
+                    <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.05rem;">
+                        Junior NOC Executive specializing in ISP operations and network infrastructure management. Passionate about network technologies and service excellence.
+                    </p>
+                    <div class="social-icons">
+                        <a href="https://linkedin.com" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="mailto:arifulislamrasel2006@gmail.com" class="social-icon">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#profile">Profile</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-envelope"></i> arifulislamrasel2006@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +880 1931 431018</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Cumilla Cantonment, Bangladesh</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Ariful Islam Rasel. All rights reserved.</p>
+                <p>Junior NOC Executive Portfolio | Designed with <i class="fas fa-heart" style="color: #ef4444;"></i> for network professionals</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // DOM Elements
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        const themeToggle = document.getElementById('theme-toggle');
+        const contactForm = document.getElementById('contactForm');
+        const progressBars = document.querySelectorAll('.progress-bar');
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const experienceItems = document.querySelectorAll('.experience-item');
+
+        // Mobile Navigation Toggle
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+
+        // Theme Toggle
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const icon = themeToggle.querySelector('i');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeToggle.querySelector('i').classList.remove('fa-moon');
+            themeToggle.querySelector('i').classList.add('fa-sun');
+        }
+
+        // Animate progress bars when in view
+        const animateProgressBars = () => {
+            progressBars.forEach(bar => {
+                const rect = bar.parentElement.getBoundingClientRect();
+                const isInViewport = rect.top <= window.innerHeight && rect.bottom >= 0;
+                
+                if (isInViewport && !bar.classList.contains('animated')) {
+                    const width = bar.getAttribute('data-width');
+                    setTimeout(() => {
+                        bar.style.width = width;
+                        bar.classList.add('animated');
+                    }, 300);
+                }
+            });
+        };
+
+        // Fade in animation on scroll
+        const checkFadeElements = () => {
+            fadeElements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+                const isInViewport = rect.top <= window.innerHeight - 100;
+                
+                if (isInViewport) {
+                    element.classList.add('visible');
+                }
+            });
+
+            // Experience items animation
+            experienceItems.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                const isInViewport = rect.top <= window.innerHeight - 100;
+                
+                if (isInViewport) {
+                    item.classList.add('visible');
+                }
+            });
+        };
+
+        // Contact Form Submission
+        contactForm.addEventListener('submit', function(e) {
+            // FormSubmit will handle the submission
+            // We'll just show a loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Reset button after 3 seconds (in case form doesn't submit)
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 3000);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = document.body.classList.contains('dark-mode') 
+                    ? 'rgba(15, 23, 42, 0.98)' 
+                    : 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                header.style.padding = '10px 0';
+            } else {
+                header.style.backgroundColor = document.body.classList.contains('dark-mode') 
+                    ? 'rgba(15, 23, 42, 0.95)' 
+                    : 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+                header.style.padding = '15px 0';
+            }
+            
+            animateProgressBars();
+            checkFadeElements();
+        });
+
+        // Initialize particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#3b82f6" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#3b82f6",
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "repulse" },
+                    onclick: { enable: true, mode: "push" }
+                }
+            },
+            retina_detect: true
+        });
+
+        // Form validation
+        const validateForm = () => {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all fields');
+                return false;
+            }
+            
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address');
+                return false;
+            }
+            
+            return true;
+        };
+        
+        // Add validation to form submit
+        contactForm.addEventListener('submit', (e) => {
+            if (!validateForm()) {
+                e.preventDefault();
+            }
+        });
+
+        // Track CV downloads
+        document.querySelectorAll('.download-cv-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                console.log('CV Download initiated');
+                // In a real implementation, you would send this to analytics
+            });
+        });
+
+        // Initialize animations on load
+        window.addEventListener('load', () => {
+            animateProgressBars();
+            checkFadeElements();
+            
+            // Add initial visible class to hero elements
+            document.querySelector('.hero-content').style.animation = 'fadeInUp 1s ease-out';
+        });
+    </script>
+</body>
+</html>
